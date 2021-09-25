@@ -2,4 +2,4 @@
 ## Ingeniería Web: Visión General (IWVG) DevOps
 
 ### Estado del código
-[![DevOps](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/miw-upm/iwvg-devops/actions/workflows/test-sonar.yml)
+[![DevOps](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml)
