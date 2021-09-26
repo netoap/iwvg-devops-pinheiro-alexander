@@ -5,3 +5,4 @@
 ### Estado del código
 [![DevOps](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=netoap_iwvg-devops-pinheiro-alexander&metric=alert_status)](https://sonarcloud.io/dashboard?id=netoap_iwvg-devops-pinheiro-alexander)
+[![BCH compliance](https://bettercodehub.com/edge/badge/netoap/iwvg-devops-pinheiro-alexander?branch=develop)](https://bettercodehub.com/)
