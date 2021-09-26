@@ -18,7 +18,7 @@ jobs:
         if: success() # always() failure() success()
         run: >
           mvn -B verify -DskipTests sonar:sonar
-          -Dsonar.projectKey=es.upm.miw:iwvg-devops-pinheiro-alexander
+          -Dsonar.projectKey=netoap_iwvg-devops-pinheiro-alexander
           -Dsonar.organization=neto-ap
           -Dsonar.host.url=https://sonarcloud.io
           -Dsonar.login=$SONAR_TOKEN
