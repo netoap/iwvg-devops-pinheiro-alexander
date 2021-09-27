@@ -9,7 +9,7 @@
 ### Estado del código
 [![DevOps](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml/badge.svg)](https://github.com/netoap/iwvg-devops-pinheiro-alexander/actions/workflows/test-sonar.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=netoap_iwvg-devops-pinheiro-alexander&metric=alert_status)](https://sonarcloud.io/dashboard?id=netoap_iwvg-devops-pinheiro-alexander)
-[![BCH compliance](https://bettercodehub.com/edge/badge/netoap/iwvg-devops-pinheiro-alexander?branch=develop)](https://bettercodehub.com/)
+[![BCH compliance](https://bettercodehub.com/edge/badge/netoap/iwvg-devops-pinheiro-alexander?branch=develop)](https://bettercodehub.com/results/netoap/iwvg-devops-pinheiro-alexander)
 [![Heroku broken](https://iwvg-devops-pinheiro-alexander.herokuapp.com/system/version-badge)](https://iwvg-devops-pinheiro-alexander.herokuapp.com/swagger-ui.html)
 
 ## Ecosistema
@@ -19,7 +19,7 @@
 * JUnits
 * Intellij
 * GitHub
-* Travis-CI
+* GitHub Action
 * Sonar Cloud
 * Better Code Hub
 * Spring
