@@ -44,7 +44,7 @@ public class Fraction {
     }
 
     public boolean isImproper() {
-        return !this.isProper();
+        return this.numerator > this.denominator;
     }
 
     public boolean isEquivalent(Fraction fraction) {
@@ -71,14 +71,14 @@ public class Fraction {
     }
 
     private void reduce() {
-        int mcd = MaximumCommonDivisor();
+        int mcd = maximumCommonDivisor();
         if (mcd > 1) {
             this.setNumerator(this.numerator / mcd);
             this.setDenominator(this.denominator / mcd);
         }
     }
 
-    private int MaximumCommonDivisor() {
+    private int maximumCommonDivisor() {
         int tmp;
         int a = this.numerator;
         int b = this.denominator;
