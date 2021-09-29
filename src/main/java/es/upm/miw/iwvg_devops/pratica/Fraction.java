@@ -1,13 +1,17 @@
 package es.upm.miw.iwvg_devops.pratica;
 
+import java.util.Objects;
+
 public class Fraction {
     private int numerator;
 
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
+        checkDenominator(denominator);
         this.numerator = numerator;
         this.denominator = denominator;
+        this.reduce();
     }
 
     public Fraction() {
@@ -27,11 +31,82 @@ public class Fraction {
     }
 
     public void setDenominator(int denominator) {
+        checkDenominator(denominator);
         this.denominator = denominator;
     }
 
     public double decimal() {
         return (double) numerator / denominator;
+    }
+
+    public boolean isProper() {
+        return this.numerator < this.denominator;
+    }
+
+    public boolean isImproper() {
+        return !this.isProper();
+    }
+
+    public boolean isEquivalent(Fraction fraction) {
+        return this.decimal() == fraction.decimal();
+    }
+
+    public Fraction add(Fraction fraction) {
+        if (this.denominator == fraction.getDenominator()) {
+            return new Fraction(this.numerator + fraction.getNumerator(), this.denominator);
+        }
+        return new Fraction((this.numerator * fraction.denominator) + (this.denominator * fraction.numerator), this.denominator * fraction.denominator);
+    }
+
+    public Fraction multiply(Fraction fraction) {
+        return new Fraction(this.numerator * fraction.numerator, this.denominator * fraction.denominator);
+    }
+
+    public Fraction divide(Fraction fraction) {
+        return this.multiply(invert(fraction));
+    }
+
+    private Fraction invert(Fraction fraction) {
+        return new Fraction(fraction.getDenominator(), fraction.getNumerator());
+    }
+
+    private void reduce() {
+        int mcd = MaximumCommonDivisor();
+        if (mcd > 1) {
+            this.setNumerator(this.numerator / mcd);
+            this.setDenominator(this.denominator / mcd);
+        }
+    }
+
+    private int MaximumCommonDivisor() {
+        int tmp;
+        int a = this.numerator;
+        int b = this.denominator;
+        while (b != 0) {
+            tmp = b;
+            b = a % b;
+            a = tmp;
+        }
+        return Math.abs(a);
+    }
+
+    private void checkDenominator(int denominator) {
+        if (denominator == 0) {
+            throw new IllegalArgumentException("Argument 'denominator' is 0");
+        }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Fraction fraction = (Fraction) o;
+        return numerator == fraction.numerator && denominator == fraction.denominator;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numerator, denominator);
     }
 
     @Override
