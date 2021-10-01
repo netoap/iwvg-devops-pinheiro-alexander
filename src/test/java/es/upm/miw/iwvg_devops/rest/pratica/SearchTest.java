@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class SearchTest {
     private Search search;
@@ -19,5 +20,8 @@ public class SearchTest {
         search = new Search();
     }
 
-
+    @Test
+    void testFindUserIdBySomeProperFraction() {
+        assertTrue(search.findUserIdBySomeProperFraction().findAny().isPresent());
+    }
 }

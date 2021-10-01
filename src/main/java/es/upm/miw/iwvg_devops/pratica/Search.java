@@ -12,6 +12,27 @@ public class Search implements ISearch {
     }
 
 
+    @Override
+    public Stream<String> findUserIdBySomeProperFraction() {
+        return users.filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
+                .map(User::getId);
+    }
 
+    @Override
+    public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
+        // To do
+        return null;
+    }
 
+    @Override
+    public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
+        // To do
+        return null;
+    }
+
+    @Override
+    public Stream<String> findUserIdByAllProperFraction() {
+        //To do
+        return null;
+    }
 }
