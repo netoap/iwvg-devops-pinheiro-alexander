@@ -19,5 +19,5 @@ public class SearchTest {
         search = new Search();
     }
 
-    
+
 }
