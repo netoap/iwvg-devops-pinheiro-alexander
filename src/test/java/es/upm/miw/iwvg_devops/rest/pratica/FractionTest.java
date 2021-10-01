@@ -7,7 +7,7 @@ import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class FractionTest {
+class FractionTest {
     private Fraction fraction;
 
     @BeforeEach
@@ -20,8 +20,6 @@ public class FractionTest {
         assertEquals(2, fraction.getNumerator());
         assertEquals(3, fraction.getDenominator());
         assertEquals(fraction, new Fraction(20, 30));
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Fraction(1, 0));
-        assertTrue(exception.getMessage().contains("Argument 'denominator' is 0"));
     }
 
     @Test
@@ -39,8 +37,7 @@ public class FractionTest {
 
     @Test
     void testIsProper() {
-        fraction = new Fraction(3, 8);
-        assertTrue(fraction.isProper());
+        assertTrue(new Fraction(3, 8).isProper());
     }
 
     @Test
@@ -54,6 +51,7 @@ public class FractionTest {
         fraction1.setNumerator(6);
         fraction1.setDenominator(9);
         assertTrue(fraction.isEquivalent(fraction1));
+        assertTrue(new Fraction(23,13).isEquivalent(new Fraction(230,130)));
     }
 
     @Test

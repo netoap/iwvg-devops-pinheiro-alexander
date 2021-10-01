@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.platform.commons.util.CollectionUtils.*;
 
-public class UserTest {
+class UserTest {
 
     private User user;
 
@@ -31,6 +31,7 @@ public class UserTest {
         assertEquals("1", user.getId());
         assertEquals("John", user.getName());
         assertEquals("Doe", user.getFamilyName());
+        assertTrue(new User().getFractions().isEmpty());
         assertEquals(new Fraction(1, 2), user.getFractions().get(0));
         assertEquals(List.of(
                 new Fraction(1, 2),
@@ -57,5 +58,18 @@ public class UserTest {
     @Test
     void testInitials() {
         assertEquals("J.", user.initials());
+    }
+
+    @Test
+    void testSetName(){
+        user.setName("Alex");
+        assertEquals("Alex", user.getName());
+    }
+
+    @Test
+    void testFamilyName(){
+        user.setFamilyName("V");
+        assertEquals("V", user.getFamilyName());
+
     }
 }
