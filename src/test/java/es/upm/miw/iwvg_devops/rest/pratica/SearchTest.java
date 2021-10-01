@@ -24,4 +24,8 @@ public class SearchTest {
     void testFindUserIdBySomeProperFraction() {
         assertTrue(search.findUserIdBySomeProperFraction().findAny().isPresent());
     }
+    @Test
+    void testFindUserFamilyNameInitialBySomeProperFraction(){
+        assertTrue(search.findUserFamilyNameInitialBySomeProperFraction().findAny().isPresent());
+    }
 }

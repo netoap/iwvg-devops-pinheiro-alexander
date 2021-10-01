@@ -20,8 +20,8 @@ public class Search implements ISearch {
 
     @Override
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
-        // To do
-        return null;
+        return users.filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
+                .map(user->user.getFamilyName().substring(0, 1)).distinct();
     }
 
     @Override
