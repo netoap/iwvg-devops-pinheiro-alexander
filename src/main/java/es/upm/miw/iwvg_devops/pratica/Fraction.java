@@ -8,7 +8,6 @@ public class Fraction {
     private int denominator;
 
     public Fraction(int numerator, int denominator) {
-        checkDenominator(denominator);
         this.numerator = numerator;
         this.denominator = denominator;
         this.reduce();
@@ -31,7 +30,6 @@ public class Fraction {
     }
 
     public void setDenominator(int denominator) {
-        checkDenominator(denominator);
         this.denominator = denominator;
     }
 
@@ -40,11 +38,11 @@ public class Fraction {
     }
 
     public boolean isProper() {
-        return this.numerator < this.denominator;
+        return Math.abs(this.numerator) < Math.abs(this.denominator);
     }
 
     public boolean isImproper() {
-        return this.numerator > this.denominator;
+        return Math.abs(this.numerator) > Math.abs(this.denominator);
     }
 
     public boolean isEquivalent(Fraction fraction) {
@@ -88,12 +86,6 @@ public class Fraction {
             a = tmp;
         }
         return Math.abs(a);
-    }
-
-    private void checkDenominator(int denominator) {
-        if (denominator == 0) {
-            throw new IllegalArgumentException("Argument 'denominator' is 0");
-        }
     }
 
     @Override

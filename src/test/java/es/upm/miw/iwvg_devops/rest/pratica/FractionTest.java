@@ -20,8 +20,6 @@ class FractionTest {
         assertEquals(2, fraction.getNumerator());
         assertEquals(3, fraction.getDenominator());
         assertEquals(fraction, new Fraction(20, 30));
-        Exception exception = assertThrows(IllegalArgumentException.class, () -> new Fraction(1, 0));
-        assertTrue(exception.getMessage().contains("Argument 'denominator' is 0"));
     }
 
     @Test
