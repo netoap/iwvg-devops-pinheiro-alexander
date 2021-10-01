@@ -46,7 +46,7 @@ public class Fraction {
     }
 
     public boolean isEquivalent(Fraction fraction) {
-        return this.decimal() == fraction.decimal();
+        return this.numerator * fraction.getDenominator() == this.denominator * fraction.getNumerator();
     }
 
     public Fraction add(Fraction fraction) {
