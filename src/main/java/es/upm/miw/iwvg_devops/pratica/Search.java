@@ -26,8 +26,7 @@ public class Search implements ISearch {
 
     @Override
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
-        // To do
-        return null;
+       return users.filter(user -> user.getFamilyName().equals(familyName)).flatMap(user -> user.getFractions().stream()).reduce(Fraction::multiply).orElse(null);
     }
 
     @Override

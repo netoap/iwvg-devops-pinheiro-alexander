@@ -24,6 +24,7 @@ class UserTest {
         fractions.add(new Fraction(1, 2));
         fractions.add(new Fraction(2, 3));
         user = new User("1", "John", "Doe", fractions);
+
     }
 
     @Test
