@@ -36,4 +36,12 @@ public class SearchTest {
         Search searchAPinheiro = new Search();
         assertNull(searchAPinheiro.findFractionMultiplicationByUserFamilyName("APinheiro"));
     }
+
+    @Test
+    void testFindUserIdByAllProperFraction() {
+        //assertTrue(search.findUserIdByAllProperFraction().findFirst().isPresent());
+        assertEquals("5", search.findUserIdByAllProperFraction().findAny().get());
+        Search wrongSearch = new Search();
+        assertNotEquals("6", wrongSearch.findUserIdByAllProperFraction().findAny().get());
+    }
 }
