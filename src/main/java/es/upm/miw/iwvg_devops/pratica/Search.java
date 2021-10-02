@@ -11,7 +11,6 @@ public class Search implements ISearch {
         users = new UsersDatabase().findAll();
     }
 
-
     @Override
     public Stream<String> findUserIdBySomeProperFraction() {
         return users.filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
@@ -21,17 +20,17 @@ public class Search implements ISearch {
     @Override
     public Stream<String> findUserFamilyNameInitialBySomeProperFraction() {
         return users.filter(user -> user.getFractions().stream().anyMatch(Fraction::isProper))
-                .map(user->user.getFamilyName().substring(0, 1)).distinct();
+                .map(user -> user.getFamilyName().substring(0, 1)).distinct();
     }
 
     @Override
     public Fraction findFractionMultiplicationByUserFamilyName(String familyName) {
-       return users.filter(user -> user.getFamilyName().equals(familyName)).flatMap(user -> user.getFractions().stream()).reduce(Fraction::multiply).orElse(null);
+        return users.filter(user -> user.getFamilyName().equals(familyName)).flatMap(user -> user.getFractions().stream()).reduce(Fraction::multiply).orElse(null);
     }
 
     @Override
     public Stream<String> findUserIdByAllProperFraction() {
-        //To do
-        return null;
+        return users.filter(user -> user.getFractions().stream().allMatch(Fraction::isProper))
+                .map(User::getId);
     }
 }
