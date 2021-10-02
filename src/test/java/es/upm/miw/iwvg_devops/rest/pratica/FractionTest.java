@@ -46,6 +46,7 @@ class FractionTest {
     @Test
     void testIsImproper() {
         assertTrue(new Fraction(8, 3).isImproper());
+        assertTrue(new Fraction(-7, -5).isImproper());
     }
 
     @Test
@@ -55,12 +56,14 @@ class FractionTest {
         fraction1.setDenominator(9);
         assertTrue(fraction.isEquivalent(fraction1));
         assertTrue(new Fraction(23, 13).isEquivalent(new Fraction(230, 130)));
+        assertTrue(new Fraction(23, 13).isEquivalent(new Fraction(-230, -130)));
     }
 
     @Test
     void testAdd() {
         assertEquals(new Fraction(5, 3), fraction.add(new Fraction(3, 3)));
         assertEquals(new Fraction(7, 6), fraction.add(new Fraction(1, 2)));
+        assertEquals(new Fraction(2, 3), fraction.add(new Fraction(0, 3)));
     }
 
     @Test

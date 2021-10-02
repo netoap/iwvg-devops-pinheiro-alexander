@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class SearchTest {
+class SearchTest {
     private Search search;
 
     @BeforeEach
@@ -33,13 +33,12 @@ public class SearchTest {
     @Test
     void testFindFractionMultiplicationByUserFamilyName() {
         assertEquals(new Fraction(0, 1), search.findFractionMultiplicationByUserFamilyName("Fernandez"));
-        Search searchAPinheiro = new Search();
-        assertNull(searchAPinheiro.findFractionMultiplicationByUserFamilyName("APinheiro"));
+        Search searchAPin = new Search();
+        assertNull(searchAPin.findFractionMultiplicationByUserFamilyName("APinheiro"));
     }
 
     @Test
     void testFindUserIdByAllProperFraction() {
-        //assertTrue(search.findUserIdByAllProperFraction().findFirst().isPresent());
         assertEquals("5", search.findUserIdByAllProperFraction().findAny().get());
         Search wrongSearch = new Search();
         assertNotEquals("6", wrongSearch.findUserIdByAllProperFraction().findAny().get());
