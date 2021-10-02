@@ -5,7 +5,10 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FractionTest {
     private Fraction fraction;
@@ -51,18 +54,18 @@ class FractionTest {
         fraction1.setNumerator(6);
         fraction1.setDenominator(9);
         assertTrue(fraction.isEquivalent(fraction1));
-        assertTrue(new Fraction(23,13).isEquivalent(new Fraction(230,130)));
+        assertTrue(new Fraction(23, 13).isEquivalent(new Fraction(230, 130)));
     }
 
     @Test
     void testAdd() {
-        assertEquals(fraction.add(new Fraction(3, 3)), new Fraction(5, 3));
-        assertEquals(fraction.add(new Fraction(1, 2)), new Fraction(7, 6));
+        assertEquals(new Fraction(5, 3), fraction.add(new Fraction(3, 3)));
+        assertEquals(new Fraction(7, 6), fraction.add(new Fraction(1, 2)));
     }
 
     @Test
     void testMultiply() {
-        assertEquals(fraction.multiply(new Fraction(5, 15)), new Fraction(2, 9));
+        assertEquals(new Fraction(2, 9), fraction.multiply(new Fraction(5, 15)));
     }
 
     @Test

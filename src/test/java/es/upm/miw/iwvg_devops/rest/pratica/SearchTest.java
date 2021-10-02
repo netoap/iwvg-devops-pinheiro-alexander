@@ -1,5 +1,6 @@
 package es.upm.miw.iwvg_devops.rest.pratica;
 
+import es.upm.miw.iwvg_devops.pratica.Fraction;
 import es.upm.miw.iwvg_devops.pratica.Search;
 import es.upm.miw.iwvg_devops.pratica.User;
 import es.upm.miw.iwvg_devops.pratica.UsersDatabase;
@@ -9,8 +10,7 @@ import org.junit.jupiter.api.Test;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class SearchTest {
     private Search search;
@@ -24,8 +24,16 @@ public class SearchTest {
     void testFindUserIdBySomeProperFraction() {
         assertTrue(search.findUserIdBySomeProperFraction().findAny().isPresent());
     }
+
     @Test
-    void testFindUserFamilyNameInitialBySomeProperFraction(){
+    void testFindUserFamilyNameInitialBySomeProperFraction() {
         assertTrue(search.findUserFamilyNameInitialBySomeProperFraction().findAny().isPresent());
+    }
+
+    @Test
+    void testFindFractionMultiplicationByUserFamilyName() {
+        assertEquals(new Fraction(0, 1), search.findFractionMultiplicationByUserFamilyName("Fernandez"));
+        Search searchAPinheiro = new Search();
+        assertNull(searchAPinheiro.findFractionMultiplicationByUserFamilyName("APinheiro"));
     }
 }
